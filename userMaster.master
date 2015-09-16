@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="userMaster.master.cs" Inherits="userMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="css/layout.css" rel="Stylesheet" type="text/css" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script>
+        $(document).ready(
+            function () {
+                $(".content").fadeOut(0);
+                $(".wrapper").fadeOut(0, function () {
+
+                    $(".wrapper").fadeIn(2000, function () {
+
+                        $(".content").fadeIn(2000);
+
+                    });
+
+                });
+
+            }
+        );
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="wrapper">
+        <div class="header">
+            <table width="100%" style="margin: 0px;">
+                <tr>
+                    <td style="width: 25%;">
+                        <img src="images/logos.png" style="height: 72px; width: 327px" />
+                    </td>
+                    <td style="width: 60%:">
+                        <table class="logo" cellspacing="0.5%">
+                            <tr>
+                                <td>
+                                    <a href="Default.aspx">Home</a>
+                                </td>
+                                <td runat="server" id="tdsup">
+                                    <a href="SignUp.aspx">Sign Up</a>
+                                </td>
+                                <td runat="server" id="tdsin">
+                                    <a href="SignIn.aspx">Sign In</a>
+                                </td>
+                                <td runat="server" id="tdsearch">
+                                    <a href="Search.aspx">Search</a>
+                                </td>
+                                <td runat="server" id="tdProfile">
+                                    <a href="#">Profile</a>
+                                </td>
+                                <td>
+                                    <a href="#">Contact Us</a>
+                                </td>
+                                <td runat="server" id="tdlg">
+                                    <asp:LinkButton ID="lnk" runat="server" onclick="lnk_Click">LogOut</asp:LinkButton>
+                                </td>
+                                <td align="right">
+                                    <label id="welcome" runat="server">
+                                        Welcome Geust,
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="width: 15%;" align="right" class="social">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="images/facebook-icon.png" />
+                                </td>
+                                <td>
+                                    <img src="images/google-icon.png" />
+                                </td>
+                                <td>
+                                    <img src="images/tumblr-icon.png" />
+                                </td>
+                                <td>
+                                    <img src="images/yahoo-icon.png" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            Copy &copy; 2014-2015 Tops Technologies, Design By Gosai Bhadresh.
+        </div>
+    </div>
+    </form>
+</body>
+</html>
